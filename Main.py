@@ -9,9 +9,9 @@ class Ui(QtWidgets.QMainWindow):
         self.button1 = self.findChild(QtWidgets.QPushButton, 'AddProduct')
         self.button2 = self.findChild(QtWidgets.QPushButton, 'ProductLists')
         self.button3 = self.findChild(QtWidgets.QPushButton, 'DeleteProduct')
-
-        self.show() 
-
+        self.button4 = self.findChild(QtWidgets.QPushButton, 'ChangeFace')
+        
+        self.show()
 
 app = QtWidgets.QApplication(sys.argv)
 window = Ui()
