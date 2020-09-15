@@ -3,6 +3,7 @@ import sys
 
 from AddProduct import AddProductUI
 from ProductList import ProductListUI
+from DeleteProduct import DeleteProductUI
 class MainUI(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainUI, self).__init__()
@@ -18,6 +19,8 @@ class MainUI(QtWidgets.QMainWindow):
         
         self.button_AddP.clicked.connect(self.AddP)
         self.button_PList.clicked.connect(self.PList)
+        self.button_DelP.clicked.connect(self.DelP)
+        
         self.show()
 
     def AddP(self):
@@ -26,4 +29,8 @@ class MainUI(QtWidgets.QMainWindow):
 
     def PList(self):
         self.dialog=ProductListUI()
+        self.close()
+
+    def DelP(self):
+        self.dialog=DeleteProductUI()
         self.close()
