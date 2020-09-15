@@ -2,6 +2,7 @@ from PyQt5 import QtWidgets, uic
 import sys
 
 from AddProduct import AddProductUI
+from ProductList import ProductListUI
 class MainUI(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainUI, self).__init__()
@@ -16,8 +17,13 @@ class MainUI(QtWidgets.QMainWindow):
         self.button_ChgF = self.findChild(QtWidgets.QPushButton, 'ChangeFace')
         
         self.button_AddP.clicked.connect(self.AddP)
+        self.button_PList.clicked.connect(self.PList)
         self.show()
 
     def AddP(self):
         self.dialog=AddProductUI()
+        self.close()
+
+    def PList(self):
+        self.dialog=ProductListUI()
         self.close()
