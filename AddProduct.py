@@ -34,6 +34,10 @@ class AddProductUI(QtWidgets.QDialog):
                     else:
                         price0 = data.find('span',class_="a-size-medium a-color-price priceBlockBuyingPriceString").text
                     self.Price.setText(price0)
+
+                if 'flipkart.com' in ProLink:
+                    price0 = data.find('div',class_="_1vC4OE _3qQ9m1").text
+                    self.Price.setText(price0)
             except:
                 self.Price.setText("Invalid URL")
                 
@@ -46,12 +50,17 @@ class AddProductUI(QtWidgets.QDialog):
                 source0 = requests.get(ProLink,headers={'user-agent':'Chrome'})
                 source = source0.text
                 data = BeautifulSoup(source,'lxml')
-                if 'amazon' in ProLink:
+                if 'amazon.in' in ProLink:
                     if(data.find('span',class_="a-size-medium a-color-price priceBlockDealPriceString")):
                         price0 = data.find('span',class_="a-size-medium a-color-price priceBlockDealPriceString").text
                     else:
                         price0 = data.find('span',class_="a-size-medium a-color-price priceBlockBuyingPriceString").text
                     print(price0)
+
+                if 'flipkart.com' in ProLink:
+                    price0 = data.find('div',class_="_1vC4OE _3qQ9m1").text
+                    print(price0)
+                
             except:
                 self.Price.setText("Invalid URL")
 
