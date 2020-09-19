@@ -50,7 +50,6 @@ class AddProductUI(QtWidgets.QDialog):
                     else:
                         price0 = data.find('span',class_="a-size-medium a-color-price priceBlockBuyingPriceString").text
                     self.Price.setText(str(price0))
-
                 if 'flipkart.com' in ProLink:
                     price0 = data.find('div',class_="_1vC4OE _3qQ9m1").text
                     self.Price.setText(str(price0))

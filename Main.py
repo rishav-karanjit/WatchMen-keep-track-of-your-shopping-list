@@ -19,7 +19,6 @@ def Price():
         for x in range(len(product_data)):
             product_name = product_data[x][0]
             product_list.append(product_name)
-
         product_Price_lists = []
         for name in product_list:
             cursor.execute('SELECT Price FROM {table}'.format(table=name))
@@ -46,7 +45,7 @@ def Price():
                     Notification(
 	                            title='WatchMen Notification',
                                 description=s,
-                                duration=20,                              # Duration in seconds
+                                duration=60,                              # Duration in seconds
                                 urgency=Notification.URGENCY_CRITICAL
                             ).send()
                     cursor.execute(f'UPDATE {product} SET Price={price}')
