@@ -1,8 +1,8 @@
 from PyQt5 import QtWidgets, uic
 import sys
 
-from AddProduct import AddProductUI
-from MainUI import MainUI
+import MainUI
+import AddProduct
 
 class ProductAdded(QtWidgets.QDialog):
     def __init__(self):
@@ -21,9 +21,9 @@ class ProductAdded(QtWidgets.QDialog):
         self.show()
     
     def YesAction(self):
-        self.dialog=AddProductUI()
+        self.dialog=AddProduct.AddProductUI()
         self.close()
     
     def NoAction(self):
-        self.dialog=MainUI()
+        self.dialog=MainUI.MainUI()
         self.close()

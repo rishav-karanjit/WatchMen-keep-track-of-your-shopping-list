@@ -1,5 +1,9 @@
 from PyQt5 import QtWidgets, uic
 import sys
+import mysql.connector
+
+db = mysql.connector.connect(host='localhost',user='root',password='root',database='WatchMen')
+cursor = db.cursor()
 
 class ProductListUI(QtWidgets.QDialog):
     def __init__(self):
@@ -15,4 +19,9 @@ class ProductListUI(QtWidgets.QDialog):
         self.URLtext = self.findChild(QtWidgets.QPlainTextEdit, 'URLtext')
 
         self.CheckPrice.clicked.connect(self.DispPrice)
+
+        cursor.execute('SHOW TABLE')
+        all_product = cursor.fetchall()
+
+        print(all_product)
         self.show()

@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import requests
 import mysql.connector
 
-from ProductAdded import ProductAdded
+import ProductAdded
 
 db = mysql.connector.connect(host='localhost',user='root',password='root',database='WatchMen')
 cursor = db.cursor()
@@ -57,39 +57,38 @@ class AddProductUI(QtWidgets.QDialog):
         ProName = ''.join(filter(whitelist.__contains__, ProName))
 
         if bool(ProLink):
-            try:
-                source0 = requests.get(ProLink,headers={'user-agent':'Chrome'})
-                source = source0.text
-                data = BeautifulSoup(source,'lxml')
-                if 'amazon.in' in ProLink:
-                    if(data.find('span',class_="a-size-medium a-color-price priceBlockDealPriceString")):
-                        price0 = data.find('span',class_="a-size-medium a-color-price priceBlockDealPriceString").text
-                    else:
-                        price0 = data.find('span',class_="a-size-medium a-color-price priceBlockBuyingPriceString").text
-                    price0 = ''.join(i for i in price0 if i.isdigit() or i == '.')
-                    price0,data,data = price0.partition(".")
-                    price0 = int(price0)
-                    
-                    cursor.execute('CREATE TABLE {tname} (Product_Link varchar(1000),Price int)'.format(tname=ProName))
-                    cursor.execute('INSERT INTO {tname} VALUES({PLink},{price})'.format(tname=ProName,PLink=Link,price=price0)) 
-                    db.commit()
-                    
-                    self.dialog=ProductAdded()
-                    self.close()
-                
-                if 'flipkart.com' in ProLink:
-                    price0 = data.find('div',class_="_1vC4OE _3qQ9m1").text
-                    price0 = ''.join(i for i in price0 if i.isdigit() or i == '.')
-                    price0,data,data = price0.partition(".")
-                    price0 = int(price0)
-                    
-                    cursor.execute('CREATE TABLE {tname} (Product_Link varchar(1000),Price int)'.format(tname=ProName))
-                    cursor.execute('INSERT INTO {tname} VALUES({PLink},{price})'.format(tname=ProName,PLink=Link,price=price0)) 
-                    db.commit()
 
-                    self.dialog=ProductAdded()
-                    self.close()
+            source0 = requests.get(ProLink,headers={'user-agent':'Chrome'})
+            source = source0.text
+            data = BeautifulSoup(source,'lxml')
+            if 'amazon.in' in ProLink:
+                if(data.find('span',class_="a-size-medium a-color-price priceBlockDealPriceString")):
+                    price0 = data.find('span',class_="a-size-medium a-color-price priceBlockDealPriceString").text
+                else:
+                    price0 = data.find('span',class_="a-size-medium a-color-price priceBlockBuyingPriceString").text
+                price0 = ''.join(i for i in price0 if i.isdigit() or i == '.')
+                price0,data,data = price0.partition(".")
+                price0 = int(price0)
+                    
+                cursor.execute('CREATE TABLE {tname} (Product_Link varchar(1000),Price int)'.format(tname=ProName))
+                cursor.execute('INSERT INTO {tname} VALUES({PLink},{price})'.format(tname=ProName,PLink=Link,price=price0)) 
+                db.commit()
+                    
+                self.dialog=ProductAdded.ProductAdded()
+                self.close()
                 
-            except:
-                self.Price.setText("Invalid URL")
+            if 'flipkart.com' in ProLink:
+                price0 = data.find('div',class_="_1vC4OE _3qQ9m1").text
+                price0 = ''.join(i for i in price0 if i.isdigit() or i == '.')
+                price0,data,data = price0.partition(".")
+                price0 = int(price0)
+                    
+                cursor.execute('CREATE TABLE {tname} (Product_Link varchar(1000),Price int)'.format(tname=ProName))
+                cursor.execute('INSERT INTO {tname} VALUES({PLink},{price})'.format(tname=ProName,PLink=Link,price=price0)) 
+                db.commit()
+
+                self.dialog=ProductAdded.ProductAdded()
+                self.close()
+                
+
 
