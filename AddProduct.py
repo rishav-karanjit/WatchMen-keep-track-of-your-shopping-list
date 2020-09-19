@@ -2,8 +2,10 @@ from PyQt5 import QtWidgets, uic
 import sys
 from bs4 import BeautifulSoup
 import requests
+
 import mysql.connector
 
+import MainUI
 import ProductAdded
 
 db = mysql.connector.connect(host='localhost',user='root',password='root',database='WatchMen')
@@ -20,9 +22,11 @@ class AddProductUI(QtWidgets.QDialog):
         self.Save = self.findChild(QtWidgets.QPushButton, 'Save')
         self.Price= self.findChild(QtWidgets.QLabel,'Price')
         self.CheckPrice = self.findChild(QtWidgets.QPushButton, 'CheckPrice')
+        self.Cancel = self.findChild(QtWidgets.QPushButton, 'Cancel')
         
         self.CheckPrice.clicked.connect(self.DispPrice)
         self.Save.clicked.connect(self.SaveProduct)
+        self.Cancel.clicked.connect(self.GoBack)
 
         self.show()
 
@@ -89,6 +93,10 @@ class AddProductUI(QtWidgets.QDialog):
 
                 self.dialog=ProductAdded.ProductAdded()
                 self.close()
+    
+    def GoBack(self):
+        self.dialog = MainUI.MainUI()
+        self.close()
                 
 
 
