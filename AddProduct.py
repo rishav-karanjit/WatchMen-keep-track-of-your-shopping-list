@@ -27,7 +27,6 @@ class AddProductUI(QtWidgets.QDialog):
         self.show()
 
     def DispPrice(self):
-        ProName = self.PName.text()
         ProLink = self.PLink.text()
         if bool(ProLink):
             try:
@@ -68,7 +67,7 @@ class AddProductUI(QtWidgets.QDialog):
                     else:
                         price0 = data.find('span',class_="a-size-medium a-color-price priceBlockBuyingPriceString").text
                     price0 = ''.join(i for i in price0 if i.isdigit() or i == '.')
-                    price0,a,a = price0.partition(".")
+                    price0,data,data = price0.partition(".")
                     price0 = int(price0)
                     
                     cursor.execute('CREATE TABLE {tname} (Product_Link varchar(1000),Price int)'.format(tname=ProName))
@@ -81,7 +80,7 @@ class AddProductUI(QtWidgets.QDialog):
                 if 'flipkart.com' in ProLink:
                     price0 = data.find('div',class_="_1vC4OE _3qQ9m1").text
                     price0 = ''.join(i for i in price0 if i.isdigit() or i == '.')
-                    price0,a,a = price0.partition(".")
+                    price0,data,data = price0.partition(".")
                     price0 = int(price0)
                     
                     cursor.execute('CREATE TABLE {tname} (Product_Link varchar(1000),Price int)'.format(tname=ProName))
