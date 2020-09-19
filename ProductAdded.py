@@ -27,7 +27,7 @@ class ProductAdded(QtWidgets.QDialog):
         self.show()
     
     def YesAction(self):
-        self.dialog=AddProduct.AddProductUI()
+        self.dialog=AddProduct.AddProductUI(self.bgcolor)
         self.close()
     
     def NoAction(self):
