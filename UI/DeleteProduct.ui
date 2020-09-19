@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>447</width>
-    <height>300</height>
+    <height>219</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Delete Product</string>
   </property>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="PName">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -59,11 +59,11 @@
     <string>Select Product:</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="DelProduct_B">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>190</y>
+     <x>290</x>
+     <y>160</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -75,6 +75,24 @@
    </property>
    <property name="text">
     <string>Delete Product</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Cancel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>160</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
    </property>
   </widget>
  </widget>
