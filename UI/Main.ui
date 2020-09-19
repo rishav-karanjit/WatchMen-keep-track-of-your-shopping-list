@@ -13,13 +13,18 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0.67, y1:0.943318, x2:1, y2:1, stop:0 rgba(36, 39, 28, 255), stop:1 rgba(221, 209, 221, 255))
+
+</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="DeleteProduct">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>190</y>
-      <width>151</width>
+      <x>110</x>
+      <y>410</y>
+      <width>371</width>
       <height>81</height>
      </rect>
     </property>
@@ -27,6 +32,21 @@
      <font>
       <pointsize>16</pointsize>
      </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton:!hover
+{
+	background-color: rgb(255, 74, 74);
+}
+
+QPushButton:hover
+{
+background-color: rgb(255, 10, 10)
+}
+</string>
     </property>
     <property name="text">
      <string>Delete Product</string>
@@ -35,9 +55,9 @@
    <widget class="QPushButton" name="AddProduct">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>190</y>
-      <width>151</width>
+      <x>110</x>
+      <y>110</y>
+      <width>371</width>
       <height>81</height>
      </rect>
     </property>
@@ -46,31 +66,73 @@
       <pointsize>16</pointsize>
      </font>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton:!hover
+{
+	background-color: rgb(255, 253, 138);
+}
+
+QPushButton:hover
+{
+background-color: rgb(255, 251, 0);
+}
+</string>
+    </property>
     <property name="text">
-     <string>Add Product</string>
+     <string>ADD PRODUCT</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="DarkModeBtn">
     <property name="geometry">
      <rect>
       <x>490</x>
       <y>10</y>
       <width>75</width>
-      <height>23</height>
+      <height>61</height>
      </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton:!hover
+{
+	background-color:rgb(163, 163, 163);
+	color:white;
+}
+
+QPushButton:hover
+{
+	background-color: rgb(0, 0, 0)
+}</string>
     </property>
     <property name="text">
      <string>Dark Mode</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="LightModeBtn">
     <property name="geometry">
      <rect>
       <x>400</x>
       <y>10</y>
       <width>75</width>
-      <height>23</height>
+      <height>61</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton:!hover
+{
+background-color: rgb(234, 234, 234);
+font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+}
+
+QPushButton:hover
+{
+	background-color: rgb(255, 255, 255);
+}</string>
     </property>
     <property name="text">
      <string>Light Mode</string>
@@ -79,9 +141,9 @@
    <widget class="QPushButton" name="ProductLists">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>190</y>
-      <width>151</width>
+      <x>110</x>
+      <y>260</y>
+      <width>371</width>
       <height>81</height>
      </rect>
     </property>
@@ -90,30 +152,27 @@
       <pointsize>16</pointsize>
      </font>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton:!hover
+{
+	background-color: rgb(168, 156, 148);
+}
+
+QPushButton:hover
+{
+background-color: rgb(237, 224, 216)
+}
+</string>
+    </property>
     <property name="text">
      <string>Product Lists</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="ChangeFace">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>370</y>
-      <width>391</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Change Face for Face Recognition</string>
-    </property>
-   </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <resources/>
  <connections/>
