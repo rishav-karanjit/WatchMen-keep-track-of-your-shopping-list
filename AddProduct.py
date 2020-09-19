@@ -4,6 +4,8 @@ from bs4 import BeautifulSoup
 import requests
 import mysql.connector
 
+from ProductAdded import ProductAdded
+
 db = mysql.connector.connect(host='localhost',user='root',password='root',database='WatchMen')
 cursor = db.cursor()
 class AddProductUI(QtWidgets.QDialog):
@@ -18,9 +20,10 @@ class AddProductUI(QtWidgets.QDialog):
         self.Save = self.findChild(QtWidgets.QPushButton, 'Save')
         self.Price= self.findChild(QtWidgets.QLabel,'Price')
         self.CheckPrice = self.findChild(QtWidgets.QPushButton, 'CheckPrice')
-
+        
         self.CheckPrice.clicked.connect(self.DispPrice)
         self.Save.clicked.connect(self.SaveProduct)
+
         self.show()
 
     def DispPrice(self):
@@ -49,11 +52,10 @@ class AddProductUI(QtWidgets.QDialog):
         ProName = self.PName.text()
         ProLink = self.PLink.text()
         Link = f'"{ProLink}"'
-        print(Link)
+
         ProName = ProName.replace(" ", "")
         whitelist = set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
         ProName = ''.join(filter(whitelist.__contains__, ProName))
-        print(ProName)
 
         if bool(ProLink):
             try:
@@ -68,23 +70,27 @@ class AddProductUI(QtWidgets.QDialog):
                     price0 = ''.join(i for i in price0 if i.isdigit() or i == '.')
                     price0,a,a = price0.partition(".")
                     price0 = int(price0)
-                    print(price0)
                     
                     cursor.execute('CREATE TABLE {tname} (Product_Link varchar(1000),Price int)'.format(tname=ProName))
                     cursor.execute('INSERT INTO {tname} VALUES({PLink},{price})'.format(tname=ProName,PLink=Link,price=price0)) 
                     db.commit()
+                    
+                    self.dialog=ProductAdded()
+                    self.close()
                 
                 if 'flipkart.com' in ProLink:
                     price0 = data.find('div',class_="_1vC4OE _3qQ9m1").text
-                    print(price0)
                     price0 = ''.join(i for i in price0 if i.isdigit() or i == '.')
                     price0,a,a = price0.partition(".")
                     price0 = int(price0)
-                    print(price0)
                     
                     cursor.execute('CREATE TABLE {tname} (Product_Link varchar(1000),Price int)'.format(tname=ProName))
                     cursor.execute('INSERT INTO {tname} VALUES({PLink},{price})'.format(tname=ProName,PLink=Link,price=price0)) 
                     db.commit()
+
+                    self.dialog=ProductAdded()
+                    self.close()
                 
             except:
                 self.Price.setText("Invalid URL")
+
