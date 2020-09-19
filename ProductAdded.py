@@ -14,9 +14,9 @@ class ProductAdded(QtWidgets.QDialog):
         uic.loadUi('./UI/ProductAddedUI.ui', self)
 
         if self.bgcolor == 1:
-            self.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0.67, y1:0.943318, x2:1, y2:1, stop:0 rgba(36, 39, 28, 255), stop:1 rgba(221, 209, 221, 255))")
+            self.setStyleSheet("background-color: rgb(115, 115, 115)")
         else:
-            self.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0.67, y1:0.943318, x2:0.528409, y2:0.83, stop:0 rgba(89, 99, 96, 255), stop:1 rgba(198, 187, 198, 255))")
+            self.setStyleSheet("background-color: rgb(188, 188, 188)")
         
         self.button_Yes = self.findChild(QtWidgets.QPushButton, 'YesButton')
         self.button_No = self.findChild(QtWidgets.QPushButton, 'NoButton')
@@ -31,5 +31,5 @@ class ProductAdded(QtWidgets.QDialog):
         self.close()
     
     def NoAction(self):
-        self.dialog=MainUI.MainUI()
+        self.dialog=MainUI.MainUI(self.bgcolor)
         self.close()

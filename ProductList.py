@@ -16,9 +16,9 @@ class ProductListUI(QtWidgets.QDialog):
         uic.loadUi('./UI/ProductList.ui', self) 
         
         if self.bgcolor == 1:
-            self.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0.67, y1:0.943318, x2:1, y2:1, stop:0 rgba(36, 39, 28, 255), stop:1 rgba(221, 209, 221, 255))")
+            self.setStyleSheet("background-color: rgb(115, 115, 115)")
         else:
-            self.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0.67, y1:0.943318, x2:0.528409, y2:0.83, stop:0 rgba(89, 99, 96, 255), stop:1 rgba(198, 187, 198, 255))")
+            self.setStyleSheet("background-color: rgb(188, 188, 188)")
         
         self.PName = self.findChild(QtWidgets.QComboBox, 'PName')
         self.ShowButton = self.findChild(QtWidgets.QPushButton, 'ShowButton')
@@ -45,5 +45,5 @@ class ProductListUI(QtWidgets.QDialog):
         self.URLtext.insertPlainText(items[0])
     
     def GoBack(self):
-        self.dialog = MainUI.MainUI()
+        self.dialog = MainUI.MainUI(self.bgcolor)
         self.close()

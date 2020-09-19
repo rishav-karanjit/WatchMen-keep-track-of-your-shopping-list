@@ -78,6 +78,18 @@
      <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton:!hover
+{
+	background-color: rgb(255, 74, 74);
+}
+
+QPushButton:hover
+{
+background-color: rgb(255, 10, 10)
+}
+</string>
+   </property>
    <property name="text">
     <string>Delete Product</string>
    </property>
@@ -95,6 +107,18 @@
     <font>
      <pointsize>12</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton:!hover
+{
+	background-color: rgb(168, 156, 148);
+}
+
+QPushButton:hover
+{
+background-color: rgb(237, 224, 216)
+}
+</string>
    </property>
    <property name="text">
     <string>Cancel</string>

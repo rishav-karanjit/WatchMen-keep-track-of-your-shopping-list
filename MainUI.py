@@ -5,8 +5,9 @@ import AddProduct
 from ProductList import ProductListUI
 from DeleteProduct import DeleteProductUI
 class MainUI(QtWidgets.QMainWindow):
-    def __init__(self):
+    def __init__(self,bgcolor):
         super(MainUI, self).__init__()
+        self.bgcolor=bgcolor
         self.initUI()
 
     def initUI(self): 
@@ -17,7 +18,11 @@ class MainUI(QtWidgets.QMainWindow):
         self.button_DelP = self.findChild(QtWidgets.QPushButton, 'DeleteProduct')
         self.button_Dark = self.findChild(QtWidgets.QPushButton, 'DarkModeBtn')
         self.button_Light = self.findChild(QtWidgets.QPushButton, 'LightModeBtn')
-        self.bgcolor=1
+        
+        if self.bgcolor == 1:
+            self.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0.67, y1:0.943318, x2:1, y2:1, stop:0 rgba(36, 39, 28, 255), stop:1 rgba(221, 209, 221, 255))")
+        else:
+            self.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0.67, y1:0.943318, x2:0.528409, y2:0.83, stop:0 rgba(89, 99, 96, 255), stop:1 rgba(198, 187, 198, 255))")
 
         self.button_AddP.clicked.connect(self.AddP)
         self.button_PList.clicked.connect(self.PList)
