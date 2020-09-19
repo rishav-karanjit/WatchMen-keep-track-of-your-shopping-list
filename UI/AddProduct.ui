@@ -17,14 +17,14 @@
    <property name="geometry">
     <rect>
      <x>380</x>
-     <y>130</y>
-     <width>81</width>
-     <height>31</height>
+     <y>120</y>
+     <width>91</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <pointsize>13</pointsize>
     </font>
    </property>
    <property name="text">
@@ -95,14 +95,14 @@
    <property name="geometry">
     <rect>
      <x>270</x>
-     <y>130</y>
-     <width>91</width>
-     <height>31</height>
+     <y>120</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <pointsize>13</pointsize>
     </font>
    </property>
    <property name="text">
@@ -120,6 +120,24 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Cancel">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>120</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
    </property>
   </widget>
  </widget>
