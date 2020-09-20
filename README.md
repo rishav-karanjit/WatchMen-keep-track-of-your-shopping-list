@@ -6,15 +6,15 @@
 <h4> Screenshots </h4>
 <ol>
 <li> App in dark mode</li>
-<img src="./Screenshots/1.App_in_Dark_Mode.png"></img>
+<img src="https://github.com/rishav-karanjit/WatchMen/blob/master/ScreenShots/1.App_in_Dark_Mode.png"></img>
 <li> App in light mode </li>
-<img src="./Screenshots/2.App_in_Light_Mode.png"></img>
+<img src="./ScreenShots/2.App_in_Light_Mode.png"></img>
 <li> Notification </li>
-<img src="./Screenshots/3.Notification.png"></img>
+<img src="./ScreenShots/3.Notification.png"></img>
 <li> Add Product </li>
-<img src="./Screenshots/4.Add_Product.png"></img>
+<img src="./ScreenShots/4.Add_Product.png"></img>
 <li> Product List </li>
-<img src="./Screenshots/5.Product_List.png"></img>
+<img src="./ScreenShots/5.Product_List.png"></img>
 <li> Delete Product </li>
-<img src="./Screenshots/6.Delete_Product.png"></img>
+<img src="./ScreenShots/6.Delete_Product.png"></img>
 </ol>
