@@ -45,7 +45,7 @@ def Price():
                     Notification(
 	                            title='WatchMen Notification',
                                 description=s,
-                                duration=60,                              # Duration in seconds
+                                duration=30,                              # Duration in seconds
                                 urgency=Notification.URGENCY_CRITICAL
                             ).send()
                     cursor.execute(f'UPDATE {product} SET Price={price}')

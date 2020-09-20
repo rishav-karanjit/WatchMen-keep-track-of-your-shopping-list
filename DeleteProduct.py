@@ -39,6 +39,7 @@ class DeleteProductUI(QtWidgets.QDialog):
     def DelP(self):
         ProName = str(self.PName.currentText())
         cursor.execute("DROP TABLE {ProName}".format(ProName=ProName))
+        
         self.dialog = MainUI.MainUI(self.bgcolor)
         self.close()
 
