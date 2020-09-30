@@ -1,9 +1,12 @@
-# WatchMen
-<li>To run install requirements using: <br>
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;pip install -r requirements.txt
-<li>Make sure you have sql server in your pc to run this program since this program uses SQL database
-<li>Products from amazon.in and flipkart.com can only be added. Adding products from another sites may cause error in program
-<h4> Screenshots </h4>
+# WatchMen | Never Miss Any Sale |
+This project is made so that we get informed of price change of the items in our shopping list. 
+
+#### To run:
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;pip install -r requirements.txt<br>
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;python MainUI.py<br>
+<li>Make sure you have sql server in your pc to run this program since this program uses SQL database</li>
+<li>Products from amazon.in and flipkart.com can only be added. Adding products from another sites may cause error in program</li>
+#### Screenshots:
 <ol>
 <li> App in dark mode</li>
 <img src="https://github.com/rishav-karanjit/WatchMen/blob/master/ScreenShots/1.App_in_Dark_Mode.png"></img>
