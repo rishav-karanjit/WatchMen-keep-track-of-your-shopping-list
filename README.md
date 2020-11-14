@@ -1,4 +1,7 @@
 # WatchMen | Never Miss Any Sale |
+
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
 This project is made so that we get informed of price change of the items in our shopping list. 
 
 #### To run:
