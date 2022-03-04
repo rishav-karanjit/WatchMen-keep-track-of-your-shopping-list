@@ -15,7 +15,7 @@ This project is made so that we get informed of price change of the items in our
 <li> App in dark mode</li>
 <img src="https://github.com/rishav-karanjit/WatchMen/blob/master/ScreenShots/1.App_in_Dark_Mode.png"></img>
 <li> App in light mode </li>
-<img src="./ScreenShots/2.App_in_Light_Mod.png"></img>
+<img src="./ScreenShots/2.App_in_Light_Mode.png"></img>
 <li> Notification </li>
 <img src="./ScreenShots/3.Notification.png"></img>
 <li> Add Product </li>
